@@ -7,7 +7,7 @@ $mail->CharSet = 'utf-8';
 $name = $_GET['user_name'];
 $phone = $_GET['user_phone'];
 $email = $_GET['user_email'];
-//$product = $_POST['user_product'];
+$product = $_GET['user_product'];
 
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
@@ -31,16 +31,12 @@ $mail->addAddress('artem.furoff@yandex.ru');     // Кому будет уход
 $mail->isHTML(true);                                  // Set email format to HTML
 
 $mail->Subject = 'Заявка с сайта';
-$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. 'Почта этого пользователя: ' .$email;
+$mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone . 'Почта этого пользователя: ' .$email . 'Продукт, который выбрал пользователь: '.$product ;
 $mail->AltBody = '';
 
 if(!$mail->send()) {
     echo 'Error';
 } else {
-    alert('Спасибо!');
-}
-
-/* else {
     header('location: thank-you.html');
-} */
+}
 ?>

@@ -1,0 +1,296 @@
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 600;
+$md1: $maxWidthContainer + 12px;
+$md2: 991;
+$md3: 767;
+$md4: 479;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+	margin: 0 auto;
+}
+
+._container {
+	max-width: $maxWidthContainer + px;
+	margin: 0 auto;
+	@media (max-width: $md2+px) {
+	}
+	@media (max-width: $md3+px) {
+		padding: 0px 10px;
+	}
+	@media (max-width: $md4+px) {
+		padding: 0px 20px;
+	}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Arial";
+	font-size: 15px;
+	padding: 0;
+	margin: 0;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+ul,
+ol {
+	margin: 0;
+}
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
+	padding: 20px;
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//====================================================================================================
+
+h2 {
+	margin-top: 20px;
+}
+
+p {
+	margin-top: 20px;
+	line-height: 20px;
+}
+
+.photo {
+	width: 175px;
+	height: 232px;
+	margin: 0 auto;
+
+	// .photo__img
+	img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.carts {
+	margin: 20px 0px;
+}
+
+ul {
+	margin-top: 20px;
+}
+
+ol {
+	margin-top: 40px;
+}
+
+li {
+	line-height: 20px;
+	padding-left: 5px;
+}
+
+.carts {
+	// .carts__wrapper
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+
+		@media (max-width: $md3+px) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+	// .carts__item
+
+	&__item {
+		max-width: 214px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 10px;
+
+		@media (max-width: $md3+px) {
+			margin-top: 20px;
+		}
+	}
+
+	// .carts__img
+	&__img {
+		width: 98px;
+		height: 147px;
+
+		img {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	// .carts__title
+	&__title {
+		margin-top: 12px;
+		text-align: center;
+
+		@media (max-width: $md2+px) {
+			font-size: 14px;
+		}
+	}
+
+	// .carts__price
+	&__price {
+		margin-top: 14px;
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	// .carts__rub
+	&__rub {
+		margin: 0px 0px 2px 5px;
+		vertical-align: middle;
+		border-bottom: 1px solid;
+		line-height: 5px;
+		display: inline-block;
+		width: 0.4em;
+	}
+
+	// .carts__button
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		border: none;
+		border-radius: 18px;
+		background: #ba2b70;
+		color: white;
+		font-size: 17px;
+		width: 130px;
+		margin: 14px 0px 0px 0px;
+		padding: 7px 0px 7px 0px;
+
+		@media (max-width: $md2+px) {
+			width: 80px;
+		}
+	}
+}
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.popup:target {
+	opacity: 1;
+	visibility: visible;
+}
+
+.popup__area {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.popup-table {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+}
+
+.table {
+}
+.cell {
+}
+.popup-content {
+	background: rgb(19, 98, 122);
+	color: white;
+	max-width: 800px;
+	padding: 30px;
+	position: relative;
+}
+.popup-close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 20px;
+	color: red;
+	text-decoration: none;
+}
+.popup {
+	// .popup__title
+	&__title {
+		padding-top: 40px;
+	}
+
+	// .popup__txt
+	&__txt {
+		text-align: center;
+	}
+}
+
+.popup-form {
+	margin-top: 20px;
+}
+
+.row {
+	margin-top: 40px;
+	padding: 20px;
+	margin: 20px;
+}
+
+.form-group {
+	margin-top: 10px;
+}
+
+.form-control {
+	width: 150px;
+	margin-left: 5px;
+	float: right;
+}
+
+
+.btn {
+
+}
+
+.btn-primary {
+	margin-top: 20px;
+}

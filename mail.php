@@ -7,7 +7,7 @@ $mail->CharSet = 'utf-8';
 $name = $_POST['user_name'];
 $phone = $_POST['user_phone'];
 $email = $_POST['user_email'];
-$product = $_POST['user_product'];
+//$product = $_POST['user_product'];
 
 
 //$mail->SMTPDebug = 3;                               // Enable verbose debug output
